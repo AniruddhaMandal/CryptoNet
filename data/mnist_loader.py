@@ -19,6 +19,8 @@ def get_data(data_file, data_labels_file):
 
 		data_labels = np.frombuffer(f.read(), dtype=np.uint8)
 
+	np.save("data/mnist_data/Data.npy", data)
+	np.save("data/mnist_data/Labels.npy",vectorize(data_labels))
 	return data, vectorize(data_labels)
 
 def vectorize(array):
